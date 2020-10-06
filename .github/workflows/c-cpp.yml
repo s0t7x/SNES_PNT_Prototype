@@ -13,8 +13,16 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: configure
-      run: ./configure
+    - name: install curl
+      run: sudo apt install curl
+    - name: download pvsl
+      run: curl -O https://github.com/nArnoSNES/snesdtc/releases/download/v2.3.2/pvsl
+    - name: download snesdtb
+      run: curl -O https://github.com/nArnoSNES/snesdtb/releases/download/v1.0-4/snesdtb_1.0-4.deb
+    - name: install snesdtb
+      run: sudo dpkg -i snesdtb_1.0-4.deb
+    - name: extract pvsl
+      run: ./pvsl
     - name: make clean
       run: make clean
     - name: make
