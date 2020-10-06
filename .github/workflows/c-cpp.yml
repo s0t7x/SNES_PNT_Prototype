@@ -17,8 +17,10 @@ jobs:
       run: curl -o pvsl https://github.com/nArnoSNES/snesdtc/releases/download/v2.3.2/pvsl
     - name: download snesdtb
       run: curl -o snesdtb.deb https://github.com/nArnoSNES/snesdtb/releases/download/v1.0-4/snesdtb_1.0-4.deb
+    - name: making pvsl executeable
+      run: sudo chmod +x pvsl
     - name: extract pvsl
-      run: sudo chmod +x pvsl && ./pvsl
+      run: ./pvsl
     - name: install snesdtb
       run: sudo dpkg -i snesdtb.deb
     - name: make clean
