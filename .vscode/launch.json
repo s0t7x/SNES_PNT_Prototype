@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "run in bsnes",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../../emulators/bsnes-plus-benny-win64/bsnes.exe",
+            "preLaunchTask": "build",
+            "args": [
+                "${workspaceFolder}/ROM/pntGameLoopTest.sfc"
+            ],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
